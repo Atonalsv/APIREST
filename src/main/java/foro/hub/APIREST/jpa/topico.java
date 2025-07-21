@@ -1,5 +1,6 @@
 package foro.hub.APIREST.jpa;
 
+import foro.hub.APIREST.datos.DatosRegistroTopico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 @Table(name = "topicos")
 @Entity(name = "Topico")
 public class topico {
@@ -32,4 +33,15 @@ public class topico {
     private String curso;
 
     private String respuesta;
+
+    public topico(DatosRegistroTopico datos) {
+        this.id = null;
+        this.titulo = datos.titulo();
+        this.mensaje = datos.mensaje();
+        this.fechaDeCreacion = datos.fechaDeCreacion();
+        this.status = datos.status();
+        this.autor = datos.autor();
+        this.curso = datos.curso();
+        this.respuesta = datos.respuesta();
+    }
 }
