@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,11 +19,14 @@ public class respuesta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombre;
+    private String mensaje;
 
-    private String correoElectronico;
+    private String topico;
 
-    private String contrasena;
+    private LocalDateTime fechaDeCreacion;
 
-    private String perfiles;
+    private String usuario;
+
+    private String solucion;
+
 }

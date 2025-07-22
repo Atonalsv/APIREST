@@ -7,6 +7,9 @@ import foro.hub.APIREST.repository.topicoRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,9 +28,9 @@ public class TopicoController {
 
     }
 
-    @GetMapping
-    public List<datosListaTopicos> listar() {
-        return repository.findAll().stream().map(datosListaTopicos::new).toList();
+    @GetMapping("/topicos/{id}")
+    public Page<datosListaTopicos> listar(@PageableDefault(size = 10, sort = {"fechaDeCreacion"}) @PathVariable("id")  Pageable paginacion) {
+        return repository.findAll(paginacion).map(datosListaTopicos::new);
     }
 
 

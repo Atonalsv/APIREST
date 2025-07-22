@@ -1,5 +1,7 @@
 package foro.hub.APIREST.datos;
 
+import java.time.LocalDateTime;
+
 public record DatosRegistroRespuesta(
         Long id,
 
@@ -7,7 +9,7 @@ public record DatosRegistroRespuesta(
 
         String Topico,
 
-        String fechaDeCreacion,
+        LocalDateTime fechaDeCreacion,
 
         String autor,
 

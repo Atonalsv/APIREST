@@ -2,10 +2,13 @@ package foro.hub.APIREST.jpa;
 
 import foro.hub.APIREST.datos.DatosRegistroTopico;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
@@ -22,7 +25,7 @@ public class topico {
 
     private String mensaje;
 
-    private String fechaDeCreacion;
+    private LocalDateTime fechaDeCreacion;
 
     //posible enum para STATUS si Trello lo indica mas adelante
     //@Enumerated(EnumType.STRING)
