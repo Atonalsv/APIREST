@@ -9,6 +9,7 @@ import org.hibernate.validator.constraints.UniqueElements;
 import java.time.LocalDateTime;
 
 public record DatosRegistroTopico(
+        Long id,
         @NotNull @UniqueElements String titulo,
         @NotNull @UniqueElements String mensaje,
         @NotNull LocalDateTime fechaDeCreacion,

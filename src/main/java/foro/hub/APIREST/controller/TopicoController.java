@@ -28,9 +28,22 @@ public class TopicoController {
 
     }
 
-    @GetMapping("/topicos/{id}")
+    @GetMapping("/{id}")
     public Page<datosListaTopicos> listar(@PageableDefault(size = 10, sort = {"fechaDeCreacion"}) @PathVariable("id")  Pageable paginacion) {
         return repository.findAll(paginacion).map(datosListaTopicos::new);
+    }
+
+    @Transactional
+    @PutMapping("/{id}")
+    public void actualizar(@RequestBody @Valid @PathVariable("id") DatosRegistroTopico datos) {
+        var topico = repository.getReferenceById(datos.id());
+        topico.actualizarInformaciones(datos);
+    }
+
+    @Transactional
+    @DeleteMapping("/{id}")
+    public void borrar(@PathVariable("id") DatosRegistroTopico datos) {
+        repository.deleteById(datos.id());
     }
 
 

@@ -6,6 +6,7 @@ import foro.hub.APIREST.jpa.usuario;
 import java.time.LocalDateTime;
 
 public record datosListaTopicos(
+        Long id,
         String titulo,
         String mensaje,
         LocalDateTime fechaDeCreación,
@@ -16,6 +17,7 @@ public record datosListaTopicos(
 ) {
     public datosListaTopicos (topico topico){
         this(
+                topico.getId(),
                 topico.getTitulo(),
                 topico.getMensaje(),
                 topico.getFechaDeCreacion(),
