@@ -54,12 +54,12 @@ public class topico {
         if (datos.titulo() != null) {
             this.titulo = datos.titulo();
         }
-        if (datos.mensaje() != null) {
-            this.mensaje() = datos.mensaje();
-        }
-        if (datos.fechaDeCreacion() != null) {
-            this.fechaDeCreacion() = datos.fechaDeCreacion();
-        }
+//        if (datos.mensaje() != null) {
+//            this.mensaje() = datos.mensaje();
+//        }
+//        if (datos.fechaDeCreacion() != null) {
+//            this.fechaDeCreacion() = datos.fechaDeCreacion();
+//        }
         if (datos.status() != null) {
             this.status = datos.status();
         }
@@ -73,6 +73,5 @@ public class topico {
             this.respuesta = datos.respuesta();
         }
     }
-
 
 }
